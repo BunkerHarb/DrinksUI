@@ -6,7 +6,7 @@ namespace DrinksUI.Data.Models
     {
         public int Id { get; set; }
         public string Type { get; set; }
-        public AddiType AddiType { get; set; }
+        public AddieType AddieType { get; set; }
         public Unit Unit { get; set; }
     }
 }

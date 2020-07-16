@@ -1,15 +1,15 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using DrinksUI.Data.Types;
 using DrinksUI.Dtos;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace DrinksUI.Data.Servies
+namespace DrinksUI.Data.Services
 {
     public class DrinkService
     {
-        private DrinkContext _drinkContext;
+        private readonly DrinkContext _drinkContext;
 
         public DrinkService(DrinkContext drinkContext)
         {
@@ -20,8 +20,8 @@ namespace DrinksUI.Data.Servies
         public async Task<Drink> GetDrink(int id)
         {
             var result = await _drinkContext.Drinks
-                                    .Include(Drink => Drink.Addis)
-                                    .ThenInclude(Addi => Addi.Ingredient)
+                                    .Include(Drink => Drink.Addies)
+                                    .ThenInclude(addie => addie.Ingredient)
                                     .Where(y => y.Id == id)
                                     .FirstOrDefaultAsync();
             

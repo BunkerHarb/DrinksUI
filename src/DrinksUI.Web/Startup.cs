@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using DrinksUI.Data.Servies;
 using DrinksUI.Data;
+using DrinksUI.Data.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace DrinksUI.Web

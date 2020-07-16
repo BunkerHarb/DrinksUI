@@ -1,6 +1,6 @@
 namespace DrinksUI.Data.Models
 {
-    public class AddiModel
+    public class AddieModel
     {
         public int Id { get; set; }
         public IngredientModel Ingredient { get; set; }

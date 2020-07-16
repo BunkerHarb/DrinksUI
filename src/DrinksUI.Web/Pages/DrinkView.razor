@@ -1,14 +1,14 @@
 ﻿@page "/drink/{DrinkId:int}"
 
 @using DrinksUI.Data.Types
-@using DrinksUI.Data.Servies;
 @using DrinksUI.Dtos;
+@using DrinksUI.Data.Services
 
 @inject DrinkService DrinkService
 
 <h3>@_drink.Name</h3>
 
-@_drink.description
+@_drink.Description
 
 <br>
 <br>
@@ -17,26 +17,26 @@
 <EditForm Model=@_drink>
 
 
-        @foreach (var addi in _drink.Addis.OrderBy(x => x.Ingredient.AddiType))
+        @foreach (var addie in _drink.Addies.OrderBy(x => x.Ingredient.AddieType))
         {
             <div class="row"> 
                 
-                    @if (addi.IsLiquid)
+                    @if (addie.IsLiquid)
                     {
                         <div class="col-sm-2">  
-                            <InputNumber @bind-Value=addi.Amount class="form-control" id="@addi.Name"/>
+                            <InputNumber @bind-Value=addie.Amount class="form-control" id="@addie.Name"/>
                         </div>
                     }else
                     {
                         <div class="col-sm-5"> 
-                            @addi.Display
+                            @addie.Display
                         </div>
                     }
                 
-                    @if (addi.IsLiquid)
+                    @if (addie.IsLiquid)
                     {
                         <div class="col-sm-5"> 
-                            <label for=@addi.Name>@addi.UnitAndName</label>
+                            <label for=@addie.Name>@addie.UnitAndName</label>
                         </div>
                     } 
             </div><br>

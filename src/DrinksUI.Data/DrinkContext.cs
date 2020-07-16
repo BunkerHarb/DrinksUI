@@ -9,7 +9,7 @@ namespace DrinksUI.Data
     {
         public DbContext Instance => this;
         public DbSet<DrinkModel> Drinks { get; set; }
-        public DbSet<AddiModel> Addis { get; set; }
+        public DbSet<AddieModel> Addis { get; set; }
         public DbSet<IngredientModel> Ingredients { get; set; }
 
         public DrinkContext(DbContextOptions<DrinkContext> options)

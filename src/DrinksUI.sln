@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinksUI.Web", "DrinksUI.Web\DrinksUI.Web.csproj", "{233914F2-3CEF-4AE7-A971-6118A26D4122}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrinksUI.Web", "DrinksUI.Web\DrinksUI.Web.csproj", "{233914F2-3CEF-4AE7-A971-6118A26D4122}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinksUI.Data", "DrinksUI.Data\DrinksUI.Data.csproj", "{BB28E8E0-1F01-4ED5-90AC-426D8E7C6D27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrinksUI.Data", "DrinksUI.Data\DrinksUI.Data.csproj", "{BB28E8E0-1F01-4ED5-90AC-426D8E7C6D27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinksUI.Dtos", "DrinksUI.Dtos\DrinksUI.Dtos.csproj", "{3EDC98DD-AC0B-48EC-A0D9-A329536B3384}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrinksUI.Dtos", "DrinksUI.Dtos\DrinksUI.Dtos.csproj", "{3EDC98DD-AC0B-48EC-A0D9-A329536B3384}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinksUI.Test", "DrinksUI.Test\DrinksUI.Test.csproj", "{491F9CA9-7A3D-44AE-A404-176A522B3C9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrinksUI.Test", "DrinksUI.Test\DrinksUI.Test.csproj", "{491F9CA9-7A3D-44AE-A404-176A522B3C9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinksUI.CommanLineTools", "DrinksUI.CommanLineTools\DrinksUI.CommanLineTools.csproj", "{D2DBA1B5-CC62-487D-8691-4F3B93932289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrinksUI.CommandLineTools", "DrinksUI.CommanLineTools\DrinksUI.CommandLineTools.csproj", "{D2DBA1B5-CC62-487D-8691-4F3B93932289}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{233914F2-3CEF-4AE7-A971-6118A26D4122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -86,5 +83,11 @@ Global
 		{D2DBA1B5-CC62-487D-8691-4F3B93932289}.Release|x64.Build.0 = Release|Any CPU
 		{D2DBA1B5-CC62-487D-8691-4F3B93932289}.Release|x86.ActiveCfg = Release|Any CPU
 		{D2DBA1B5-CC62-487D-8691-4F3B93932289}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {221D0646-7E25-4636-8392-238FF18AEC13}
 	EndGlobalSection
 EndGlobal

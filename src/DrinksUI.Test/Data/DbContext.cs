@@ -38,8 +38,8 @@ namespace DrinksUI.Test.Data
         public void CanInsertAndRetrieveIngredients()
         {
             var ingredients = new List<IngredientModel>(){
-                new IngredientModel(){Type = "Vodka", AddiType = AddiType.PushDosed, Unit = Unit.CL},
-                new IngredientModel(){Type = "Lemon Slice", AddiType = AddiType.Extra, Unit = Unit.Pcs}
+                new IngredientModel(){Type = "Vodka", AddieType = AddieType.PushDosed, Unit = Unit.CL},
+                new IngredientModel(){Type = "Lemon Slice", AddieType = AddieType.Extra, Unit = Unit.Pcs}
             };
 
             _context.AddRange(ingredients);
@@ -47,7 +47,7 @@ namespace DrinksUI.Test.Data
 
             var vodka = _context.Ingredients.FirstOrDefault(x => x.Type == "Vodka");
             Assert.That(vodka, Is.Not.Null);
-            Assert.That(vodka.AddiType, Is.Not.Null);
+            Assert.That(vodka.AddieType, Is.Not.Null);
             Assert.That(vodka.Unit, Is.Not.Null);
         }
 
@@ -55,8 +55,8 @@ namespace DrinksUI.Test.Data
         public void CanInsertAndRetrieveDrink()
         {
             var ingredients = new List<IngredientModel>(){
-                new IngredientModel(){Type = "Vodka", AddiType = AddiType.PushDosed, Unit = Unit.CL},
-                new IngredientModel(){Type = "Lemon Slice", AddiType = AddiType.Extra, Unit = Unit.Pcs}
+                new IngredientModel(){Type = "Vodka", AddieType = AddieType.PushDosed, Unit = Unit.CL},
+                new IngredientModel(){Type = "Lemon Slice", AddieType = AddieType.Extra, Unit = Unit.Pcs}
             };
 
             _context.AddRange(ingredients);
@@ -65,11 +65,11 @@ namespace DrinksUI.Test.Data
             _context.Add(new DrinkModel()
             {
                 Name = "screwDriver",
-                description = "Something That ReSpeller Won't hate",
-                Addis = new List<AddiModel>()
+                Description = "Something That ReSpeller Won't hate",
+                Addies = new List<AddieModel>()
                 {
-                    new AddiModel() {Ingredient = ingredients[0], Amount = 2},
-                    new AddiModel() {Ingredient = ingredients[1], Amount = 14}
+                    new AddieModel() {Ingredient = ingredients[0], Amount = 2},
+                    new AddieModel() {Ingredient = ingredients[1], Amount = 14}
                 }
             });
 
@@ -77,8 +77,8 @@ namespace DrinksUI.Test.Data
 
             var drink = _context.Drinks.FirstOrDefault();
             Assert.That(drink, Is.Not.Null);
-            Assert.That(drink.description, Is.Not.Null);
-            Assert.That(drink.Addis, Has.Count.EqualTo(2));
+            Assert.That(drink.Description, Is.Not.Null);
+            Assert.That(drink.Addies, Has.Count.EqualTo(2));
         }
     }
 }

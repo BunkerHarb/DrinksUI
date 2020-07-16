@@ -1,6 +1,6 @@
 namespace DrinksUI.Dtos
 {
-    public enum AddiType
+    public enum AddieType
     {
         PushDosed = 0,
         Poured = 1,

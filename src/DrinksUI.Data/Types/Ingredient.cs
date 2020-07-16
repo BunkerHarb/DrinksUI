@@ -6,9 +6,9 @@ namespace DrinksUI.Data.Types
     public class Ingredient
     {
         public string Type;
-        public AddiType AddiType;
+        public AddieType AddieType;
         public Unit Unit;
 
-        public static Ingredient Create(IngredientModel model) => new Ingredient(){Type = model.Type, AddiType = model.AddiType, Unit = model.Unit};
+        public static Ingredient Create(IngredientModel model) => new Ingredient(){Type = model.Type, AddieType = model.AddieType, Unit = model.Unit};
     }
 }
