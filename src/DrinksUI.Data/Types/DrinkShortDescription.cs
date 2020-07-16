@@ -1,4 +1,4 @@
-using DrinksUI.Dtos;
+using DrinksUI.Dtos.Interfaces;
 
 namespace DrinksUI.Data.Types
 {

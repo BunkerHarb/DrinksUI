@@ -1,4 +1,4 @@
-namespace DrinksUI.Dtos
+namespace DrinksUI.Dtos.Interfaces
 {
     public interface IDrinkShortDescription
     {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DrinksUI.Data.Types;
-using DrinksUI.Dtos;
+using DrinksUI.Dtos.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace DrinksUI.Data.Services

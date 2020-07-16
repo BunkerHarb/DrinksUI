@@ -9,5 +9,4 @@
     <ProjectReference Include="..\DrinksUI.Dtos\DrinksUI.Dtos.csproj" />
   </ItemGroup>
 
-
 </Project>
