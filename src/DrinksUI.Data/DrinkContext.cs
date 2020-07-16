@@ -9,7 +9,7 @@ namespace DrinksUI.Data
     {
         public DbContext Instance => this;
         public DbSet<DrinkModel> Drinks { get; set; }
-        public DbSet<AddieModel> Addis { get; set; }
+        public DbSet<IAddieModel> Addies { get; set; }
         public DbSet<IngredientModel> Ingredients { get; set; }
 
         public DrinkContext(DbContextOptions<DrinkContext> options)
@@ -33,8 +33,6 @@ namespace DrinksUI.Data
             builder.Entity<IngredientModel>()
                 .HasIndex(x => x.Type)
                 .IsUnique();
-
-            
         }
     }
 }

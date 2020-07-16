@@ -13,6 +13,6 @@ namespace DrinksUI.Data.Types
         public string UnitAndName => $"{Ingredient.Unit} - {Ingredient.Type}";
         public bool IsLiquid => Ingredient.AddieType != AddieType.Extra;
 
-        public static Addie Create(AddieModel model) => new Addie(){Ingredient = Ingredient.Create(model.Ingredient), Amount = model.Amount};
+        public static Addie Create(IAddieModel model) => new Addie(){Ingredient = Ingredient.Create(model.Ingredient), Amount = model.Amount};
     }
 }

@@ -66,10 +66,10 @@ namespace DrinksUI.Test.Data
             {
                 Name = "screwDriver",
                 Description = "Something That ReSpeller Won't hate",
-                Addies = new List<AddieModel>()
+                Addies = new List<IAddieModel>()
                 {
-                    new AddieModel() {Ingredient = ingredients[0], Amount = 2},
-                    new AddieModel() {Ingredient = ingredients[1], Amount = 14}
+                    new IAddieModel() {Ingredient = ingredients[0], Amount = 2},
+                    new IAddieModel() {Ingredient = ingredients[1], Amount = 14}
                 }
             });
 
