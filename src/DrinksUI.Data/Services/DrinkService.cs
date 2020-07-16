@@ -30,7 +30,7 @@ namespace DrinksUI.Data.Services
 
         public Task<IEnumerable<IDrinkShortDescription>> GetShortDescriptions()
         {
-            IEnumerable<IDrinkShortDescription> result = _drinkContext.Drinks.Select(x => new DrinkShortDescription(){Name = x.Name, id = x.Id, ImageUrl = x.ImageUrl}).AsEnumerable();
+            IEnumerable<IDrinkShortDescription> result = _drinkContext.Drinks.Select(x => new DrinkShortDescription(){Name = x.Name, Id = x.Id, ImageUrl = x.ImageUrl}).AsEnumerable();
             return Task.FromResult(result);
         }
     }
