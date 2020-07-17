@@ -66,10 +66,10 @@ namespace DrinksUI.Test.Data
             {
                 Name = "screwDriver",
                 Description = "Something That ReSpeller Won't hate",
-                Addies = new List<IAddieModel>()
+                Addies = new List<AddieModel>()
                 {
-                    new IAddieModel() {Ingredient = ingredients[0], Amount = 2},
-                    new IAddieModel() {Ingredient = ingredients[1], Amount = 14}
+                    new AddieModel() {Ingredient = ingredients[0], Amount = 2},
+                    new AddieModel() {Ingredient = ingredients[1], Amount = 14}
                 }
             });
 
@@ -79,6 +79,38 @@ namespace DrinksUI.Test.Data
             Assert.That(drink, Is.Not.Null);
             Assert.That(drink.Description, Is.Not.Null);
             Assert.That(drink.Addies, Has.Count.EqualTo(2));
+        }
+
+        [Test]
+        public void CanCreateDto()
+        {
+            var ingredients = new List<IngredientModel>(){
+                new IngredientModel(){Type = "Vodka", AddieType = AddieType.PushDosed, Unit = Unit.CL},
+                new IngredientModel(){Type = "Lemon Slice", AddieType = AddieType.Extra, Unit = Unit.Pcs}
+            };
+
+            _context.AddRange(ingredients);
+            _context.SaveChanges();
+
+            _context.Add(new DrinkModel()
+            {
+                Name = "screwDriver",
+                Description = "Something That ReSpeller Won't hate",
+                Addies = new List<AddieModel>()
+                {
+                    new AddieModel() {Ingredient = ingredients[0], Amount = 2},
+                    new AddieModel() {Ingredient = ingredients[1], Amount = 14}
+                }
+            });
+
+            _context.SaveChanges();
+
+            var drink = _context.Drinks.FirstOrDefault();
+            var dto = drink.GetDto;
+            Assert.That(dto, Is.Not.Null);
+            Assert.That(dto.Description, Is.Not.Null);
+            Assert.That(dto.Addies, Has.Count.EqualTo(2));
+            Assert.That(dto.Addies[0].Amount, Is.Not.Null);
         }
     }
 }

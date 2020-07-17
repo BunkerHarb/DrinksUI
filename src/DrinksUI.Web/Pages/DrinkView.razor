@@ -1,8 +1,8 @@
 ﻿@page "/drink/{DrinkId:int}"
 
-@using DrinksUI.Data.Types
-@using DrinksUI.Dtos;
+@using DrinksUI.Dtos.Interfaces;
 @using DrinksUI.Data.Services
+@using DrinksUI.Web.Entities
 
 @inject DrinkService DrinkService
 
@@ -17,41 +17,45 @@
 <EditForm Model=@_drink>
 
 
-        @foreach (var addie in _drink.Addies.OrderBy(x => x.Ingredient.AddieType))
-        {
-            <div class="row"> 
-                
-                    @if (addie.IsLiquid)
-                    {
-                        <div class="col-sm-2">  
-                            <InputNumber @bind-Value=addie.Amount class="form-control" id="@addie.Name"/>
-                        </div>
-                    }else
-                    {
-                        <div class="col-sm-5"> 
-                            @addie.Display
-                        </div>
-                    }
-                
-                    @if (addie.IsLiquid)
-                    {
-                        <div class="col-sm-5"> 
-                            <label for=@addie.Name>@addie.UnitAndName</label>
-                        </div>
-                    } 
-            </div><br>
-        }
-    <input type="submit" class="btn btn-primary" value="Pour"/>
+    @foreach (var addie in _addies.OrderBy(x => x.Ingredient.AddieType))
+    {
+        <div class="row">
+
+            @if (addie.IsLiquid)
+            {
+                <div class="col-sm-2">
+                    <InputNumber @bind-Value=addie.Amount class="form-control" id="@addie.Name" />
+                </div>
+            }
+            else
+            {
+                <div class="col-sm-5">
+                    @addie.Display
+                </div>
+            }
+
+            @if (addie.IsLiquid)
+            {
+                <div class="col-sm-5">
+                    <label for=@addie.Name>@addie.UnitAndName</label>
+                </div>
+            }
+        </div><br>
+    }
+    <input type="submit" class="btn btn-primary" value="Pour" />
 </EditForm>
 
 @code {
     [Parameter]
     public int DrinkId { get; set; }
-    private Drink _drink { get; set; }
+
+    private Drink _drink;
+    private Addie[] _addies;
 
     protected override async Task OnInitializedAsync()
     {
-        _drink = await DrinkService.GetDrink(DrinkId);
+        _drink = new Drink(await DrinkService.GetDrink(DrinkId));
+        _addies = _drink.Addies.Select(x => new Addie(x)).ToArray();
     }
 
     void FormSubmitted(EditContext editContext)

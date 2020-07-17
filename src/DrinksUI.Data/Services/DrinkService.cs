@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DrinksUI.Data.Types;
+using DrinksUI.Dtos.implementations;
 using DrinksUI.Dtos.Interfaces;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace DrinksUI.Data.Services
 {
@@ -17,7 +18,7 @@ namespace DrinksUI.Data.Services
             _drinkContext.Database.EnsureCreated();
         }
 
-        public async Task<Drink> GetDrink(int id)
+        public async Task<IDrink> GetDrink(int id)
         {
             var result = await _drinkContext.Drinks
                                     .Include(Drink => Drink.Addies)
@@ -25,12 +26,12 @@ namespace DrinksUI.Data.Services
                                     .Where(y => y.Id == id)
                                     .FirstOrDefaultAsync();
             
-            return Drink.Create(result);
+            return result.GetDto;
         }
 
         public Task<IEnumerable<IDrinkShortDescription>> GetShortDescriptions()
         {
-            IEnumerable<IDrinkShortDescription> result = _drinkContext.Drinks.Select(x => new DrinkShortDescription(){Name = x.Name, Id = x.Id, ImageUrl = x.ImageUrl}).AsEnumerable();
+            IEnumerable<IDrinkShortDescription> result = _drinkContext.Drinks.Select(x => new DrinkShortDescriptionDto(x.Id, x.Name, x.ImageUrl)).AsEnumerable();
             return Task.FromResult(result);
         }
     }
