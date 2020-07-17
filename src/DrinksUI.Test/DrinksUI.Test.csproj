@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <ProjectReference Include="..\DrinksUI.Data\DrinksUI.Data.csproj" />
     <ProjectReference Include="..\DrinksUI.Dtos\DrinksUI.Dtos.csproj" />
+    <ProjectReference Include="..\DrinksUI.CommanLineTools\DrinksUI.CommandLineTools.csproj" />
   </ItemGroup>
 
 </Project>

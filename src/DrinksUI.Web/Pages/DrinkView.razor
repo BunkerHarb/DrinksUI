@@ -8,15 +8,11 @@
 
 <h3>@_drink.Name</h3>
 
-@_drink.Description
+<p>@_drink.Description</p>
 
-<br>
-<br>
 <h5>Ingredients:</h5>
 
 <EditForm Model=@_drink>
-
-
     @foreach (var addie in _addies.OrderBy(x => x.Ingredient.AddieType))
     {
         <div class="row">

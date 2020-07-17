@@ -1,0 +1,27 @@
+﻿@page "/config"
+@using DrinksUI.Data.Services
+
+@inject DrinkService DrinkService
+
+<h3>Do Stuff</h3>
+
+<div>
+    <button class="btn btn-primary" @onclick="@Add">Add</button>
+    <button class="btn btn-primary" @onclick="@ReCreate">Delete</button>
+</div>
+<p>
+@Message
+</p>
+@code {
+    public string Message = string.Empty;
+
+    private async Task Add()
+    {
+        Message = await DrinkService.AddMockData();
+    }
+
+    private async Task ReCreate()
+    {
+        Message = await DrinkService.DeleteMockData();
+    }
+}

@@ -34,5 +34,16 @@ namespace DrinksUI.Data.Services
             IEnumerable<IDrinkShortDescription> result = _drinkContext.Drinks.Select(x => new DrinkShortDescriptionDto(x.Id, x.Name, x.ImageUrl)).AsEnumerable();
             return Task.FromResult(result);
         }
+
+        public async Task<string> AddMockData()
+        {
+
+            return await _drinkContext.AddMockData();
+        }
+
+        public async Task<string> DeleteMockData()
+        { 
+            return await _drinkContext.DeleteMockData();
+        }
     }
 }
