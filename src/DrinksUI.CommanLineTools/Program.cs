@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using DrinksUI.Data;
-
 using Microsoft.EntityFrameworkCore;
 
 namespace DrinksUI.CommandLineTools
@@ -21,7 +20,8 @@ namespace DrinksUI.CommandLineTools
             mockDataBuilder.SubmitThatShit(drinkContext);
             Console.WriteLine("inserted stuff");
 
-            var test = drinkContext.Drinks.Include(x => x.Addies).ThenInclude(addie => addie.Ingredient).FirstOrDefault(i => i.Id == 1);
+            var test = drinkContext.Drinks.Include(x => x.Addies).ThenInclude(addie => addie.Ingredient).FirstOrDefault(i => i.Id == 1) ?? throw new NullReferenceException("Didn't get shit");
+            Console.WriteLine($"got: {test.Name}");
         }
     }
 }

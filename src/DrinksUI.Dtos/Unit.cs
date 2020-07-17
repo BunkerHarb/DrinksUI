@@ -1,3 +1,4 @@
+// ReSharper disable InconsistentNaming
 namespace DrinksUI.Dtos
 {
     public enum Unit

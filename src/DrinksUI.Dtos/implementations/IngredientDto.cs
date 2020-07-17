@@ -1,5 +1,4 @@
-﻿using System.Net.NetworkInformation;
-using DrinksUI.Dtos.Interfaces;
+﻿using DrinksUI.Dtos.Interfaces;
 
 namespace DrinksUI.Dtos.implementations
 {

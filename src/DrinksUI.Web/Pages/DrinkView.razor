@@ -1,6 +1,5 @@
 ﻿@page "/drink/{DrinkId:int}"
 
-@using DrinksUI.Dtos.Interfaces;
 @using DrinksUI.Data.Services
 @using DrinksUI.Web.Entities
 
@@ -12,7 +11,7 @@
 
 <h5>Ingredients:</h5>
 
-<EditForm Model=@_drink>
+<EditForm Model=@_drink OnSubmit="@FormSubmitted">
     @foreach (var addie in _addies.OrderBy(x => x.Ingredient.AddieType))
     {
         <div class="row">
@@ -56,7 +55,6 @@
 
     void FormSubmitted(EditContext editContext)
     {
-        bool formIsValid = editContext.Validate();
         Console.WriteLine(_drink.Name);
     }
 }

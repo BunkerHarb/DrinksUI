@@ -105,7 +105,7 @@ namespace DrinksUI.Test.Data
 
             _context.SaveChanges();
 
-            var drink = _context.Drinks.FirstOrDefault();
+            var drink = _context.Drinks.First();
             var dto = drink.GetDto;
             Assert.That(dto, Is.Not.Null);
             Assert.That(dto.Description, Is.Not.Null);

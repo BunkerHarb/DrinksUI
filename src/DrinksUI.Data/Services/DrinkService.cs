@@ -21,7 +21,7 @@ namespace DrinksUI.Data.Services
         public async Task<IDrink> GetDrink(int id)
         {
             var result = await _drinkContext.Drinks
-                                    .Include(Drink => Drink.Addies)
+                                    .Include(drink => drink.Addies)
                                     .ThenInclude(addie => addie.Ingredient)
                                     .Where(y => y.Id == id)
                                     .FirstOrDefaultAsync();
